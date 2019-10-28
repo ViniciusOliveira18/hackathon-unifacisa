@@ -1,0 +1,21 @@
+<app-container-padrao titulo='Categorias'>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categoria of categorias">
+            <td>{{categoria.descricao}}</td>
+            <td>
+              <button><i class="material-icons">delete</i></button>
+              <button><i class="material-icons" [routerLink] = "['editar', categoria.id]" >edit </i></button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</app-container-padrao>
