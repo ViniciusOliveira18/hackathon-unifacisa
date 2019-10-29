@@ -14,16 +14,20 @@ export class ProdutosService {
    return this.http.get<ProdutosModel[]>(`http://localhost:3000/produtos`)
   }
 
-  cadastrar(modelo : ProdutosModel):Observable<ProdutosModel[]>{
-    return this.http.post<ProdutosModel[]>(`http://localhost:3000/produtos`,modelo)
+  getProdutoById(idProduto: number):Observable<ProdutosModel>{
+    return this.http.get<ProdutosModel>(`${'http://localhost:3000/produtos'}/${idProduto}`)
+   }
+
+  cadastrarProduto(modelo : ProdutosModel):Observable<ProdutosModel>{
+    return this.http.post<ProdutosModel>(`http://localhost:3000/produtos`,modelo)
   }
 
-  atualizar(modelo: ProdutosModel, id: number):Observable<ProdutosModel>{
-    return this.http.put<ProdutosModel>(`http://localhost:3000/produtos`+ id,modelo)
+  atualizarProduto(modelo: ProdutosModel, idProduto: number):Observable<ProdutosModel>{
+    return this.http.put<ProdutosModel>(`${'http://localhost:3000/produtos'}/${idProduto}`, modelo)
   }
 
-  delete(id: number):Observable<ProdutosModel>{
-    return this.http.delete<ProdutosModel>(`${'http://localhost:3000/produtos'}/${id}`)
+  deletarProduto(idProduto: number):Observable<ProdutosModel>{
+    return this.http.delete<ProdutosModel>(`${'http://localhost:3000/produtos'}/${idProduto}`)
 
   }
 }

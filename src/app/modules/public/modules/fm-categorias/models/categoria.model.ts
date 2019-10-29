@@ -1,3 +1,3 @@
-export interface CategoriaModel{
+export class CategoriaModel{
     descricao: string;
 }

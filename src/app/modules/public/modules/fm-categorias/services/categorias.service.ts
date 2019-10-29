@@ -8,20 +8,25 @@ export class CategoriasService {
 
   constructor(private http: HttpClient) { }
 
-  getCategoria():Observable<CategoriaModel[]>{
+  getCategorias():Observable<CategoriaModel[]>{
    return this.http.get<CategoriaModel[]>(`http://localhost:3000/categorias`)
   }
 
-  cadastrar(modelo: CategoriaModel):Observable<CategoriaModel[]>{
-    return this.http.post<CategoriaModel[]>(`http://localhost:3000/cadegorias`,modelo)
+  getCategoriaById(idCategoria : number):Observable<CategoriaModel>{
+    return this.http.get<CategoriaModel>(`${'http://localhost:3000/categorias'}/${idCategoria}`)
+   }
+
+
+  cadastrarCategoria(modelo: CategoriaModel):Observable<CategoriaModel>{
+    return this.http.post<CategoriaModel>(`http://localhost:3000/categorias`,modelo)
   }
 
-  updateCategoria(modelo: CategoriaModel, id: number): Observable<CategoriaModel>{
-    return this.http.put<CategoriaModel>(`http://localhost:3000/categorias` + id, modelo)
+  atualizarCategoria(modelo: CategoriaModel, idCategoria: number): Observable<CategoriaModel>{
+    return this.http.put<CategoriaModel>(`${'http://localhost:3000/categorias'}/${idCategoria}`,modelo)
   }
 
-  deleteCategoria(id: number):Observable<CategoriaModel>{
-    return this.http.delete<CategoriaModel>(`http://localhost:3000/categorias` + id)
+  deletarCategoria(idCategoria: number):Observable<CategoriaModel>{
+    return this.http.delete<CategoriaModel>(`${'http://localhost:3000/categorias'}/${idCategoria}`)
   }
 
 }

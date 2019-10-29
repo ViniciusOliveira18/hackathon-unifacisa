@@ -1,21 +1,24 @@
 <app-container-padrao titulo='Categorias'>
-    <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Opções</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let categoria of categorias">
-            <td>{{categoria.descricao}}</td>
-            <td>
-              <button><i class="material-icons">delete</i></button>
-              <button><i class="material-icons" [routerLink] = "['editar', categoria.id]" >edit </i></button>
+  <div class="d-flex flex-row-reverse">
+    <button class="btn btn-primary  mb-2" routerLink = "cadastrar">Adicionar</button>
+  </div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categoria of categorias">
+        <td>{{categoria.descricao}}</td>
+        <td>
+          <button><i class="material-icons" (click)="deletar(categoria.id)">delete</i></button>
+          <button><i class="material-icons" [routerLink]="['editar', categoria.id]">edit </i></button>
 
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </app-container-padrao>

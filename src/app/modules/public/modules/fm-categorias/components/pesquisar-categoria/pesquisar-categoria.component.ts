@@ -14,10 +14,17 @@ export class PesquisarCategoriaComponent implements OnInit {
   constructor(private categoriasService: CategoriasService) { }
 
   ngOnInit() {
-    this.categoriasService.getCategoria().subscribe(listaCategorias => {
+    this.categoriasService.getCategorias().subscribe(listaCategorias => {
       this.categorias = listaCategorias
     })
   }
+
+  deletar(idCategoria: number) {
+    this.categoriasService.deletarCategoria(idCategoria).subscribe(() => {
+        this.ngOnInit();
+    })
+
+}
 
 
 }

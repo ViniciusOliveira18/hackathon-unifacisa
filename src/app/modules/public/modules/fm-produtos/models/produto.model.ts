@@ -1,9 +1,9 @@
-export interface ProdutosModel {
+export class ProdutosModel {
 
-  id?: number,
-  nome: string,
-  categoriasId: number,
-  desc: string,
-  valor: number
+  id?: number;
+  nome: string;
+  categoriasId: number;
+  desc: string;
+  valor: number;
 
 }

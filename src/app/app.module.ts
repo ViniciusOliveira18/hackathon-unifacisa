@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PublicModule } from './modules/public/public.module';
 import { SharedComponentsModule } from './shared/shared-components/shared-components.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent

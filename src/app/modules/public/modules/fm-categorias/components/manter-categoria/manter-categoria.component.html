@@ -1,12 +1,12 @@
 <app-container-padrao titulo="Cadastrar Categoria">
-  <form>
+  <form [formGroup]="cadastroForm">
     <div class="form-group ">
-      <input class="form-control form-control-lg" type="text" placeholder="Nome">
+      <input formControlName="descricao" class="form-control form-control-lg" type="text" placeholder="Nome">
       <small class="form-text text-muted">Nome do produto</small>
     </div>
     <div class="d-flex flex-row-reverse">
-      <button class="btn btn-primary btn-lg mr-2">Salvar</button>
-      <button class="btn btn-secondary btn-lg mr-2">Cancelar</button>
+      <button type="submit" class="btn btn-primary btn-lg mr-2" (click)="salvarCategoria()">Salvar</button>
+      <button class="btn btn-secondary btn-lg mr-2" (click)="cancelar()" >Cancelar</button>
     </div>
   </form>
 </app-container-padrao>

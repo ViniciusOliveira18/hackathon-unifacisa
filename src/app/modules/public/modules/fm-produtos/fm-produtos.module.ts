@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { ProdutosService } from './services/produtos.service';
 import { FmProdutosRoutingModule } from './fm-produtos-routing.module';
 import { SharedComponentsModule } from 'src/app/shared/shared-components/shared-components.module';
+import { PublicModule } from '../../public.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoriasService } from '../fm-categorias/services/categorias.service';
 
 @NgModule(
     {
@@ -15,10 +18,13 @@ import { SharedComponentsModule } from 'src/app/shared/shared-components/shared-
             CommonModule,
             FmProdutosRoutingModule,
             SharedComponentsModule,
+            PublicModule,
+            FormsModule,
+            ReactiveFormsModule
             
         ],
         exports: [],
-        providers: [ProdutosService]
+        providers: [ProdutosService,CategoriasService]
     }
 )
 export class FmProdutosModule {

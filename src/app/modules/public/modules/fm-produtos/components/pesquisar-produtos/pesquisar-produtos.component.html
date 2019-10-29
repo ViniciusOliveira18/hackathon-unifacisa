@@ -1,6 +1,6 @@
 <app-container-padrao titulo = 'Produtos'>
   <div class="d-flex flex-row-reverse mb-2">
-    <button class="btn btn-primary" routerLink="cadastrar">Adicionar</button>
+    <button class="btn btn-primary" [routerLink]="['cadastrar']">Adicionar</button>
   </div>
   <table class="table table-striped">
     <thead>
@@ -19,7 +19,7 @@
         <td>{{produto.desc}}</td>
         <td>{{produto.valor}}</td>
         <td>
-          <button class="btn btn-danger btn-sm mr-2" (click)="delete(produto)">remover</button>
+          <button class="btn btn-danger btn-sm mr-2" (click)="deletar(produto.id)">remover</button>
           <button class="btn btn-primary btn-sm" [routerLink]="['editar', produto.id]">editar</button>
         </td>
       </tr>

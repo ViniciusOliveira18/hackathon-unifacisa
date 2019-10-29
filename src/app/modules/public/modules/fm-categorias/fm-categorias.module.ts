@@ -7,6 +7,7 @@ import { ManterCategoriaComponent } from './components/manter-categoria/manter-c
 import { CategoriasService } from './services/categorias.service';
 import { SharedComponentsModule } from 'src/app/shared/shared-components/shared-components.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PesquisarCategoriaComponent , ManterCategoriaComponent],
@@ -14,7 +15,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FmCategoriasRoutingModule,
     SharedComponentsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers:[CategoriasService]
 })

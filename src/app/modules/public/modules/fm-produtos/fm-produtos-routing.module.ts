@@ -6,7 +6,8 @@ import { ManterProdutosComponent } from './components/manter-produtos/manter-pro
 const routes: Routes = [
   {
     path: '',
-    component: PesquisarProdutosComponent
+    component: PesquisarProdutosComponent,
+    pathMatch: 'full'
   },
   {
     path: 'cadastrar', component: ManterProdutosComponent
